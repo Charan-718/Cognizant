@@ -1,0 +1,436 @@
+:root {
+  --bg: #f4f7f9;
+  --panel: #ffffff;
+  --ink: #17212b;
+  --muted: #637386;
+  --line: #dce5ec;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --blue-soft: #eef4ff;
+  --green: #198754;
+  --green-soft: #e8f6ef;
+  --yellow: #b7791f;
+  --yellow-soft: #fff4d6;
+  --red: #c24135;
+  --red-soft: #fde8e5;
+  --shadow: 0 18px 48px rgba(25, 38, 52, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.app-header {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 0 auto 28px;
+  max-width: 1240px;
+}
+
+.app-header h1,
+.panel-heading h2 {
+  margin: 0;
+}
+
+.app-header h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.workspace {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.sidebar {
+  display: grid;
+  gap: 16px;
+  position: sticky;
+  top: 24px;
+}
+
+.dashboard-column {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.panel-heading {
+  margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+  font-size: 1.15rem;
+}
+
+.field-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.input-field {
+  display: grid;
+  gap: 8px;
+}
+
+.input-field span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.input-with-unit {
+  align-items: center;
+  background: #f9fbfc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  padding: 0 12px;
+}
+
+.input-with-unit:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.input-with-unit input {
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  min-width: 0;
+  outline: 0;
+  padding: 13px 0;
+  width: 100%;
+}
+
+.input-with-unit small {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.primary-button,
+.approve-button,
+.reject-button {
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 800;
+  min-height: 44px;
+  padding: 12px 16px;
+}
+
+.primary-button {
+  background: var(--blue);
+  margin-top: 22px;
+  width: 100%;
+}
+
+.primary-button:hover:not(:disabled) {
+  background: var(--blue-dark);
+}
+
+.status-badge {
+  background: var(--green-soft);
+  border: 1px solid rgba(25, 135, 84, 0.25);
+  border-radius: 8px;
+  color: var(--green);
+  min-width: 210px;
+  padding: 14px 16px;
+}
+
+.status-badge.medium,
+.status-badge.waiting_approval {
+  background: var(--yellow-soft);
+  border-color: rgba(183, 121, 31, 0.3);
+  color: var(--yellow);
+}
+
+.status-badge.critical,
+.status-badge.failed,
+.status-badge.rejected {
+  background: var(--red-soft);
+  border-color: rgba(194, 65, 53, 0.3);
+  color: var(--red);
+}
+
+.status-badge span,
+.connection-info span {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.status-badge strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.connection-info {
+  background: #111827;
+  border-radius: 8px;
+  color: #e5ecf4;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.connection-info strong {
+  display: block;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.agent-flow {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
+}
+
+.flow-step {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  min-height: 132px;
+  padding: 16px;
+  position: relative;
+}
+
+.flow-step:not(:last-child)::after {
+  background: var(--line);
+  content: '';
+  height: 2px;
+  position: absolute;
+  right: -13px;
+  top: 32px;
+  width: 13px;
+}
+
+.flow-step.complete {
+  border-color: rgba(37, 99, 235, 0.35);
+}
+
+.flow-step.normal {
+  background: var(--green-soft);
+}
+
+.flow-step.medium {
+  background: var(--yellow-soft);
+}
+
+.flow-step.critical {
+  background: var(--red-soft);
+}
+
+.step-index {
+  align-items: center;
+  background: var(--blue-soft);
+  border-radius: 999px;
+  color: var(--blue);
+  display: inline-flex;
+  font-weight: 800;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
+.flow-step strong,
+.flow-step span {
+  display: block;
+}
+
+.flow-step span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dashboard-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-height: 118px;
+  padding: 18px;
+}
+
+.dashboard-card span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.dashboard-card strong {
+  display: block;
+  font-size: 1.12rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.dashboard-card.normal {
+  border-left: 5px solid var(--green);
+}
+
+.dashboard-card.medium {
+  border-left: 5px solid var(--yellow);
+}
+
+.dashboard-card.critical {
+  border-left: 5px solid var(--red);
+}
+
+.dashboard-card.wide {
+  grid-column: 1 / -1;
+}
+
+.approval-panel {
+  border-color: rgba(25, 135, 84, 0.28);
+}
+
+.whatsapp-card {
+  background: #e9f8ee;
+  border-radius: 8px;
+  color: #173c2a;
+  margin: 0 0 18px auto;
+  max-width: 520px;
+  padding: 16px;
+}
+
+.message-meta {
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.whatsapp-card p {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.whatsapp-card small {
+  color: #3e6b53;
+}
+
+.approval-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.approve-button {
+  background: var(--green);
+}
+
+.reject-button {
+  background: var(--red);
+}
+
+.error-banner {
+  background: var(--red-soft);
+  border: 1px solid rgba(194, 65, 53, 0.28);
+  border-radius: 8px;
+  color: var(--red);
+  font-weight: 700;
+  padding: 14px 16px;
+}
+
+@media (max-width: 1040px) {
+  .workspace,
+  .agent-flow,
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .flow-step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 20px;
+  }
+
+  .app-header,
+  .approval-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .workspace,
+  .agent-flow,
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-badge,
+  .approval-actions button {
+    width: 100%;
+  }
+}
