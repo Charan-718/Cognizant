@@ -1,0 +1,238 @@
+<svg width="100%" viewBox="0 0 780 1060" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Agentic Digital Twin Decision Flow</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- DATA SOURCES                                        -->
+<!-- ══════════════════════════════════════════════════ -->
+<rect x="50" y="12" width="680" height="110" rx="10" fill="rgb(45,45,42)" stroke="rgb(120,118,110)" stroke-width="0.8"/>
+<text x="390" y="32" text-anchor="middle" dominant-baseline="central" style="fill:rgb(211,209,199);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:600;">Data sources — digital twin input</text>
+
+<rect x="66"  y="44" width="90" height="64" rx="6" fill="rgb(6,78,59)"  stroke="rgb(52,198,148)"  stroke-width="0.8"/>
+<text x="111" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(110,231,183);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:700;">Temperature</text>
+<text x="111" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(52,198,148);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;font-weight:600;">Thermal sensors</text>
+
+<rect x="168" y="44" width="90" height="64" rx="6" fill="rgb(6,78,59)"  stroke="rgb(52,198,148)"  stroke-width="0.8"/>
+<text x="213" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(110,231,183);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:700;">Vibration</text>
+<text x="213" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(52,198,148);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;font-weight:600;">Accelerometers</text>
+
+<rect x="270" y="44" width="90" height="64" rx="6" fill="rgb(6,78,59)"  stroke="rgb(52,198,148)"  stroke-width="0.8"/>
+<text x="315" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(110,231,183);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:700;">Speed</text>
+<text x="315" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(52,198,148);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;font-weight:600;">Encoders</text>
+
+<rect x="372" y="44" width="90" height="64" rx="6" fill="rgb(6,78,59)"  stroke="rgb(52,198,148)"  stroke-width="0.8"/>
+<text x="417" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(110,231,183);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:700;">Load</text>
+<text x="417" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(52,198,148);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;font-weight:600;">Current</text>
+
+<rect x="474" y="44" width="90" height="64" rx="6" fill="rgb(6,78,59)"  stroke="rgb(52,198,148)"  stroke-width="0.8"/>
+<text x="519" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(110,231,183);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:700;">Pressure</text>
+<text x="519" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(52,198,148);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;font-weight:600;">Transducers</text>
+
+<rect x="576" y="44" width="90" height="64" rx="6" fill="rgb(50,30,90)" stroke="rgb(167,139,250)" stroke-width="0.8"/>
+<text x="621" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(221,214,254);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:700;">Sim</text>
+<text x="621" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(167,139,250);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;font-weight:600;">Synthetic</text>
+
+<!-- arrow: data sources → digital twin agent -->
+<line x1="390" y1="122" x2="390" y2="148" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- DIGITAL TWIN AGENT   y=152                         -->
+<!-- ══════════════════════════════════════════════════ -->
+<rect x="260" y="152" width="260" height="48" rx="8" fill="rgb(68,68,65)" stroke="rgb(180,178,169)" stroke-width="0.5"/>
+<text x="390" y="172" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,255,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Digital twin agent</text>
+<text x="390" y="190" text-anchor="middle" dominant-baseline="central" style="fill:rgb(220,218,210);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Real / simulated machine state</text>
+
+<line x1="390" y1="200" x2="390" y2="226" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- PREDICTION AGENT   y=228                           -->
+<!-- ══════════════════════════════════════════════════ -->
+<rect x="240" y="228" width="300" height="64" rx="8" fill="rgb(12,68,124)" stroke="rgb(133,183,235)" stroke-width="0.5"/>
+<text x="390" y="250" text-anchor="middle" dominant-baseline="central" style="fill:rgb(220,238,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Prediction agent</text>
+<text x="390" y="270" text-anchor="middle" dominant-baseline="central" style="fill:rgb(180,220,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Outputs failure risk score 0–100%</text>
+<text x="390" y="286" text-anchor="middle" dominant-baseline="central" style="fill:rgb(180,220,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Runs first — independent of context</text>
+
+<line x1="390" y1="292" x2="390" y2="318" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- RISK DIAMOND   center=(390,342)                    -->
+<!-- ══════════════════════════════════════════════════ -->
+<polygon points="390,320 474,342 390,364 306,342" fill="rgb(40,40,38)" stroke="rgb(0,0,0)" stroke-width="1.5"/>
+<text x="390" y="337" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,255,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">Risk</text>
+<text x="390" y="351" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,255,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">score?</text>
+
+<!-- left &lt;40% → Normal ops -->
+<line x1="306" y1="342" x2="224" y2="342" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="265" y="333" text-anchor="middle" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">&lt;40%</text>
+<!-- right &gt;90% → Emergency stop -->
+<line x1="474" y1="342" x2="556" y2="342" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="515" y="333" text-anchor="middle" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">&gt;90%</text>
+<!-- down 40-90% → context agent -->
+<line x1="390" y1="364" x2="390" y2="392" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="416" y="381" dominant-baseline="central" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">40–90%</text>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- NORMAL OPS  (left)  y=318                          -->
+<!-- ══════════════════════════════════════════════════ -->
+<rect x="104" y="318" width="120" height="48" rx="8" fill="rgb(39,80,10)" stroke="rgb(151,196,89)" stroke-width="0.5"/>
+<text x="164" y="336" text-anchor="middle" dominant-baseline="central" style="fill:rgb(220,255,180);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Normal ops</text>
+<text x="164" y="354" text-anchor="middle" dominant-baseline="central" style="fill:rgb(180,230,100);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Monitor + continue</text>
+
+<!-- EMERGENCY STOP  (right)  y=318 -->
+<rect x="556" y="318" width="148" height="48" rx="8" fill="rgb(121,31,31)" stroke="rgb(240,149,149)" stroke-width="0.5"/>
+<text x="630" y="336" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,210,210);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Emergency stop</text>
+<text x="630" y="354" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,170,170);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Risk &gt;90%, halt now</text>
+
+<!-- Arrow: Emergency Stop → Notification block -->
+<line x1="630" y1="366" x2="630" y2="380" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- NOTIFICATION block below Emergency Stop  y=382 -->
+<rect x="572" y="382" width="148" height="44" rx="8" fill="rgb(60,30,80)" stroke="rgb(200,140,255)" stroke-width="0.5"/>
+<text x="646" y="398" text-anchor="middle" dominant-baseline="central" style="fill:rgb(235,200,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">Notify human</text>
+<text x="646" y="414" text-anchor="middle" dominant-baseline="central" style="fill:rgb(200,140,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;font-weight:600;">Email / WhatsApp alert</text>
+
+<!-- Single red dotted line: Escalate right (680,730) and Force Escalate right (672,880) both join at x=750, run up together to Emergency Stop right (704,342) -->
+<path d="M680 730 L750 730 L750 880 L672 880" fill="none" stroke="rgb(180,0,0)" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M750 730 L750 342 L704 342" fill="none" stroke="rgb(180,0,0)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- CONTEXT AGENT   y=394                              -->
+<!-- ══════════════════════════════════════════════════ -->
+<rect x="220" y="394" width="340" height="64" rx="8" fill="rgb(99,56,6)" stroke="rgb(239,159,39)" stroke-width="0.5"/>
+<text x="390" y="416" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,220,120);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Context agent</text>
+<text x="390" y="436" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,190,80);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Receives risk score, applies thresholds</text>
+<text x="390" y="452" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,190,80);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Output: fault type + severity</text>
+
+<line x1="390" y1="458" x2="390" y2="484" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="416" y="474" dominant-baseline="central" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">enriched context</text>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- DECISION AGENT   y=486                             -->
+<!-- ══════════════════════════════════════════════════ -->
+<rect x="200" y="486" width="380" height="64" rx="8" fill="rgb(113,43,19)" stroke="rgb(240,153,123)" stroke-width="0.5"/>
+<text x="390" y="508" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,210,190);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Decision agent</text>
+<text x="390" y="528" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,180,140);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Risk score + fault context → optimal action</text>
+<text x="390" y="544" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,180,140);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Reduce / maintain / stop / schedule maintenance</text>
+
+<line x1="390" y1="550" x2="390" y2="576" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- CONFIDENCE AGENT   y=578                           -->
+<!-- ══════════════════════════════════════════════════ -->
+<rect x="220" y="578" width="340" height="56" rx="8" fill="rgb(60,52,137)" stroke="rgb(175,169,236)" stroke-width="0.5"/>
+<text x="390" y="598" text-anchor="middle" dominant-baseline="central" style="fill:rgb(230,225,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Confidence agent</text>
+<text x="390" y="618" text-anchor="middle" dominant-baseline="central" style="fill:rgb(200,195,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Assess risk × certainty × impact → autonomy level</text>
+
+<line x1="390" y1="634" x2="390" y2="660" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- INCREASE SPEED — outside & left of Comm agent border              -->
+<!-- x=55, y=578 moved right to clear dotted line                      -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<rect x="55" y="578" width="140" height="48" rx="8" fill="rgb(39,80,10)" stroke="rgb(151,196,89)" stroke-width="0.5"/>
+<text x="125" y="596" text-anchor="middle" dominant-baseline="central" style="fill:rgb(220,255,180);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Increase speed</text>
+<text x="125" y="614" text-anchor="middle" dominant-baseline="central" style="fill:rgb(180,230,100);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Agent-decided, no human</text>
+
+<!-- Stabilisation path: exits left side of Normal Ops (x=104,y=342) → left to x=88 → down to y=602 → right into Increase Speed left edge -->
+<path d="M104 342 L88 342 L88 572 L125 572 L125 578" fill="none" stroke="rgb(80,80,80)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+<text x="76" y="490" dominant-baseline="central" transform="rotate(-90,76,490)" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:700;text-anchor:middle;">stabilisation path</text>
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- COMMUNICATION & CONTROL AGENT wrapper   y=662 to y=930            -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<rect x="80" y="662" width="620" height="268" rx="12" fill="none" stroke="rgb(100,149,237)" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="390" y="682" text-anchor="middle" dominant-baseline="central" style="fill:rgb(147,197,253);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.5px;">Communication &amp; Control Agent</text>
+<text x="390" y="698" text-anchor="middle" dominant-baseline="central" style="fill:rgb(100,149,237);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10.5px;font-weight:600;">Approval routing · Notifications · Multi-channel interaction</text>
+
+<!-- AUTONOMY DIAMOND   center=(390,726) -->
+<polygon points="390,710 468,730 390,750 312,730" fill="rgb(40,40,38)" stroke="rgb(0,0,0)" stroke-width="1.5"/>
+<text x="390" y="726" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,255,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">Autonomy</text>
+<text x="390" y="740" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,255,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">level?</text>
+
+<!-- left → Auto-execute -->
+<line x1="312" y1="730" x2="248" y2="730" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="280" y="721" text-anchor="middle" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">High conf.</text>
+<!-- down → Await approval -->
+<line x1="390" y1="750" x2="390" y2="782" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="416" y="769" dominant-baseline="central" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">Medium</text>
+<!-- right → Escalate -->
+<line x1="468" y1="730" x2="540" y2="730" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="504" y="721" text-anchor="middle" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">Critical</text>
+
+<!-- AUTO-EXECUTE  (left inside comm agent) -->
+<rect x="108" y="706" width="140" height="48" rx="8" fill="rgb(39,80,10)" stroke="rgb(151,196,89)" stroke-width="0.5"/>
+<text x="178" y="724" text-anchor="middle" dominant-baseline="central" style="fill:rgb(220,255,180);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Auto-execute</text>
+<text x="178" y="742" text-anchor="middle" dominant-baseline="central" style="fill:rgb(180,230,100);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">No human needed</text>
+
+<!-- ESCALATE  (right inside comm agent) -->
+<rect x="540" y="706" width="140" height="48" rx="8" fill="rgb(121,31,31)" stroke="rgb(240,149,149)" stroke-width="0.5"/>
+<text x="610" y="724" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,210,210);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Escalate</text>
+<text x="610" y="742" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,170,170);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Phone + WhatsApp</text>
+
+<!-- AWAIT APPROVAL -->
+<rect x="260" y="784" width="260" height="48" rx="8" fill="rgb(99,56,6)" stroke="rgb(239,159,39)" stroke-width="0.5"/>
+<text x="390" y="802" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,220,120);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Await human approval</text>
+<text x="390" y="820" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,190,80);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Dashboard / WhatsApp / email</text>
+
+<line x1="390" y1="832" x2="390" y2="858" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- APPROVED DIAMOND   center=(390,872) -->
+<polygon points="390,860 462,880 390,900 318,880" fill="rgb(40,40,38)" stroke="rgb(0,0,0)" stroke-width="1.5"/>
+<text x="390" y="876" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,255,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">Approved?</text>
+<text x="390" y="890" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,255,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">/ timeout?</text>
+
+<!-- Yes → left → Execute action -->
+<line x1="318" y1="880" x2="264" y2="880" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="291" y="871" text-anchor="middle" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">Yes</text>
+<!-- Timeout → right → Force escalate -->
+<line x1="462" y1="880" x2="524" y2="880" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="493" y="871" text-anchor="middle" style="fill:rgb(0,0,0);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:700;">Timeout</text>
+
+<!-- EXECUTE ACTION  (left) -->
+<rect x="124" y="856" width="140" height="48" rx="8" fill="rgb(39,80,10)" stroke="rgb(151,196,89)" stroke-width="0.5"/>
+<text x="194" y="874" text-anchor="middle" dominant-baseline="central" style="fill:rgb(220,255,180);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Execute action</text>
+<text x="194" y="892" text-anchor="middle" dominant-baseline="central" style="fill:rgb(180,230,100);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">Operator approved</text>
+
+<!-- FORCE ESCALATE  (right) -->
+<rect x="524" y="856" width="148" height="48" rx="8" fill="rgb(121,31,31)" stroke="rgb(240,149,149)" stroke-width="0.5"/>
+<text x="598" y="874" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,210,210);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Force escalate</text>
+<text x="598" y="892" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,170,170);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">AI call triggered</text>
+
+<!-- ESCALATE → FORCE ESCALATE: handled by the single red dotted path above -->
+
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!-- SINGLE ARROW from bottom-centre of Comm & Control (y=930)         -->
+<!-- T-splits: left → Action Dispatched (x=280), right → Explanation   -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<line x1="390" y1="930" x2="390" y2="968" stroke="rgb(0,0,0)" stroke-width="2"/>
+<line x1="280" y1="968" x2="590" y2="968" stroke="rgb(0,0,0)" stroke-width="2"/>
+<line x1="280" y1="968" x2="280" y2="982" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="590" y1="968" x2="590" y2="982" stroke="rgb(0,0,0)" stroke-width="2" marker-end="url(#arrow)"/>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- BOTTOM ROW (swapped): Action Dispatched (left) +       -->
+<!-- Explanation Agent (right)                              -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<!-- ACTION DISPATCHED   x=160, width=240 (left) -->
+<rect x="160" y="984" width="240" height="56" rx="8" fill="rgb(68,68,65)" stroke="rgb(180,178,169)" stroke-width="0.5"/>
+<text x="280" y="1001" text-anchor="middle" dominant-baseline="central" style="fill:rgb(255,255,255);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:700;">Action dispatched</text>
+<text x="280" y="1018" text-anchor="middle" dominant-baseline="central" style="fill:rgb(220,218,210);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:600;">Machine stabilises</text>
+<text x="280" y="1034" text-anchor="middle" dominant-baseline="central" style="fill:rgb(220,218,210);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10.5px;font-weight:600;">Agents monitor (risk &lt;40%)</text>
+
+<!-- EXPLANATION AGENT   x=420, width=240 (right) -->
+<rect x="420" y="984" width="240" height="56" rx="8" fill="rgb(8,80,65)" stroke="rgb(93,202,165)" stroke-width="0.5"/>
+<text x="540" y="1004" text-anchor="middle" dominant-baseline="central" style="fill:rgb(180,255,230);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:700;">Explanation agent</text>
+<text x="540" y="1024" text-anchor="middle" dominant-baseline="central" style="fill:rgb(130,230,190);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:600;">What happened / why / action taken</text>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- RECOVERY LOOP — from Action Dispatched left edge   -->
+<!-- loops back to data sources via left margin         -->
+<!-- ══════════════════════════════════════════════════ -->
+<path d="M160 1012 L30 1012 L30 78 L66 78" fill="none" stroke="rgb(80,80,80)" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+
+</svg>
